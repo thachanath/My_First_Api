@@ -15,9 +15,6 @@
             console.log("response:", response)
             return response
         }).then(data => {
-            //console.log("data:", data)
-            const text = document.getElementById('text')
-            text.innerText = data.message
             const result = document.getElementById('result')
             result.innerText = data.result
         })
