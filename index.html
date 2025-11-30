@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <h2 id = "text" ></h2>
+    <h2 id = "result"></h2>
+    <script>
+        fetch('http://localhost:3000/op?a=12&b=10&op=%2B').then(res => {
+            const response = res.json()
+            console.log("response:", response)
+            return response
+        }).then(data => {
+            //console.log("data:", data)
+            const text = document.getElementById('text')
+            text.innerText = data.message
+            const result = document.getElementById('result')
+            result.innerText = data.result
+        })
+
+    </script>
+</body>
+</html>
